@@ -44,6 +44,8 @@ nav.top a{text-decoration:none; color:var(--muted)} nav.top a:hover, nav.top a[a
 .intro{padding:18px 0 34px}
 /* 11-19: a line breaks between clauses, never inside one; a clause that does not fit moves down whole */
 .cl{display:inline-block}
+/* 11-20: on a phone almost no clause fits one line, so whole-clause breaks left single words stranded; let the text flow there */
+@media (max-width:560px){ .cl{display:inline} }
 .intro-l{margin:0; font:400 clamp(21px,2.4vw,27px)/1.35 var(--display); letter-spacing:-.005em; text-wrap:pretty}
 .intro-s{margin:12px 0 0; font-size:14px; color:var(--muted)}
 .intro-s a{color:var(--ink)}
@@ -73,8 +75,9 @@ figure.worn img{aspect-ratio:4/5; object-fit:cover; object-position:50% 35%}
 .under h2{margin:0; font:400 clamp(30px,3.6vw,46px)/1.1 var(--display); letter-spacing:-.015em; white-space:nowrap}
 .under p{margin:0; color:var(--muted); font-size:17px; line-height:1.55}
 .under .go{grid-row:3; margin-top:4px; font-size:14px; color:var(--muted); white-space:nowrap; transition:color .2s}
-.cover:hover .under .go, .cover:focus-visible .under .go{color:var(--ink)}
-.cover:hover h2{text-decoration:underline; text-underline-offset:4px; text-decoration-thickness:1px}
+/* 11-20: hover only where there is a pointer; on a phone a tapped cover kept its underline */
+.cover:focus-visible .under .go{color:var(--ink)}
+@media (hover:hover){ .cover:hover .under .go{color:var(--ink)} .cover:hover h2{text-decoration:underline; text-underline-offset:4px; text-decoration-thickness:1px} }
 @media (max-width:560px){ .under h2{white-space:normal} }
 .frame .tag{position:absolute; left:16px; top:14px; font:400 13px/1.3 var(--sans); z-index:3}
 .frame .hint{position:absolute; right:16px; bottom:12px; font:400 12px var(--sans); z-index:3}
@@ -130,11 +133,12 @@ figure.worn img{aspect-ratio:4/5; object-fit:cover; object-position:50% 35%}
   .sc-credit{display:none}   /* too long for a half-width cell; the credit stays on the project page */
 }
 /* Radar cover: the product film, silent and looping (media/radar-film-cover.mp4) */
-.f-rd{background:#ecebe7; border:1px solid var(--rule)}
+.f-rd{background:#ecebe7 url(media/radar-film-poster.jpg) center/cover no-repeat; border:1px solid var(--rule)}   /* 11-20: the poster stays behind the film for phones that show no video frame */
 .frame iframe.film{position:absolute; inset:0; width:100%; height:100%; border:0; pointer-events:none}
 .frame video.film{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; pointer-events:none}
 .f-rd .tag{color:var(--ink)}
 .f-rd .hint{color:var(--muted); left:16px; right:auto; top:34px; bottom:auto}   /* under the label: the film's lower right is where the devices pass */
+@media (max-width:560px){ .f-rd .hint{display:none} }   /* 11-20: on a phone the second line ran into the laptop in the film */
 
 /* Music cover: until there is audio and footage, just the two songs, set in type (no fake footage).
    It is only as tall as its words, a strip rather than an empty poster; give it the full frame again once there is a real cover */
