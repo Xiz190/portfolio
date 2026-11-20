@@ -1,0 +1,135 @@
+{
+ "groups": {
+  "hand": {
+   "roots": [
+    "mano-root"
+   ],
+   "centre": [
+    92.54,
+    -11.15,
+    -44.87
+   ],
+   "size": 325.8,
+   "explode": [
+    79.43,
+    -17.56,
+    -38.51
+   ]
+  },
+  "finger": {
+   "roots": [
+    "finger-mount"
+   ],
+   "centre": [
+    -97.95,
+    18.3,
+    -38.08
+   ],
+   "size": 197.9,
+   "explode": [
+    -83.6,
+    -7.41,
+    -32.5
+   ]
+  },
+  "boards": {
+   "roots": [
+    "pca9685",
+    "esp32",
+    "pwr-dc-adapter"
+   ],
+   "centre": [
+    -29.06,
+    6.8,
+    126.4
+   ],
+   "size": 168.8,
+   "explode": [
+    -20.06,
+    -9.17,
+    87.26
+   ]
+  },
+  "heart": {
+   "roots": [
+    "heart-base"
+   ],
+   "centre": [
+    248.09,
+    -204.48,
+    -258.64
+   ],
+   "size": 125.9,
+   "explode": [
+    40.07,
+    -15.79,
+    -41.77
+   ]
+  },
+  "power": {
+   "roots": [],
+   "centre": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "size": 0.0,
+   "explode": [
+    0.0,
+    -0.0,
+    -0.0
+   ]
+  }
+ },
+ "wires": [
+  "cable-finger-gnd",
+  "cable-finger-pwm",
+  "cable-finger-v",
+  "cable-index-gnd",
+  "cable-index-pwm",
+  "cable-index-v",
+  "cable-middle-gnd",
+  "cable-middle-pwm",
+  "cable-middle-v",
+  "cable-pinky-gnd",
+  "cable-pinky-pwm",
+  "cable-pinky-v",
+  "cable-ring-gnd",
+  "cable-ring-pwm",
+  "cable-ring-v",
+  "cable-thumb-gnd",
+  "cable-thumb-pwm",
+  "cable-thumb-v"
+ ],
+ "link": [
+  "link-end-base",
+  "link-end-hat",
+  "link-espnow"
+ ],
+ "cap": [
+  "buckle",
+  "cap-band",
+  "cap-brim",
+  "cap-button",
+  "cap-crown",
+  "ear-l",
+  "ear-r",
+  "head",
+  "seam-0",
+  "seam-1",
+  "seam-2",
+  "seam-3",
+  "seam-4",
+  "seam-5",
+  "strap-l",
+  "strap-r"
+ ],
+ "other": [
+  "cam",
+  "sun",
+  "sun.001",
+  "sun.002",
+  "sun.003",
+  "sun.004"
+ ]
+}
